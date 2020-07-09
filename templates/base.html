@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <base href='/~bsherrat/portal/'>
+  <title>{% block title %}Untitled{% endblock %}</title>
+  <link href='assets/main.css' rel='stylesheet'>
+{% block scripts %}
+{% endblock %}
+</head>
+
+<body>
+
+<header>
+  <h1>{{ self.title() }}</h1>
+</header>
+
+<main>
+{% block content %}
+{% endblock %}
+</main>
+
+<footer>
+  <div class='warning-draft'>
+    DRAFT
+  </div>
+  <div class='logos'>
+    <span class='logo'>
+      <img src='assets/img/ca-logo.png'>
+    </span>
+    <a class='logo' href='https://www.metoffice.gov.uk/research/approach/collaboration/spf/spf-clean-air'>
+      <img src='assets/img/mo-logo.svg'>
+    </a>
+    <a class='logo' href='https://nerc.ukri.org/research/funded/programmes/clean-air/'>
+      <img src='assets/img/ukri-logo-white.png'>
+    </a>
+  </div>
+  <div class='copyright'>
+    <span>&copy; Crown copyright</span>
+    <span>Met Office</span>
+  </div>
+</footer>
+
+</body>
+
+</html>
