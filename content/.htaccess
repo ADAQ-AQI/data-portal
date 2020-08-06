@@ -8,12 +8,11 @@ DirectoryIndex index.md index.jinja index.py index.html
 # but only sets a content-type if not otherwise handled (ie by an Action)
 
 AddType text/plain .md
-AddHandler md .md
-Action md "/~bsherrat/portal/cgi-md.cgi"
-
 AddType text/html .jinja
-AddHandler jinja .jinja
-Action jinja "/~bsherrat/portal/cgi-jinja.py"
+AddType text/html .ipynb
+
+AddHandler renderable .jinja .md .ipynb
+Action renderable "/~bsherrat/portal/bin/cgi-handler.cgi"
 
 AddType text/html .py
 AddHandler cgi-script .py
