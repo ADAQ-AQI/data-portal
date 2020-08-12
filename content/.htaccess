@@ -1,0 +1,19 @@
+Options -Indexes +ExecCGI
+
+DirectoryIndex index.md index.jinja index.py index.html
+
+# -------- Handlers
+# Tell the server how to handle certain files
+# Note: mimetype required for the server to check extensions automatically,
+# but only sets a content-type if not otherwise handled (ie by an Action)
+
+AddType text/plain .md
+AddHandler md .md
+Action md "/~bsherrat/portal/cgi-md.cgi"
+
+AddType text/html .jinja
+AddHandler jinja .jinja
+Action jinja "/~bsherrat/portal/cgi-jinja.py"
+
+AddType text/html .py
+AddHandler cgi-script .py
